@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+
+  server:
+    container_name: MY_SERVER
+    build: server/
+
+  client:
+    container_name:  MY_CLIENT
+    build: client/
+    ports:
+      - 80:8080
+    depends_on:
+      - server
